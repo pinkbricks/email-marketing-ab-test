@@ -1,17 +1,27 @@
-# Do emails pay off? Measuring the impact of email marketing on conversion and spend
+# Do Marketing Emails Pay Off? An A/B Testing Case Study
 
 *Does sending a marketing email increase purchases and spending, and does the extra revenue cover the cost of sending it?*
 
 Among customers who received an email, many would have bought anyway, so counting their purchases overstates the campaign’s impact. What matters are the purchases that happened because of the email.
 
-To isolate that effect, I analyzed the Hillstrom email marketing experiment, in which [64,000] customers were randomly assigned to receive one of two emails or no email at all. Because assignment was random, the groups are comparable, and any difference in outcomes can be attributed to the email.
+To investigate this, I analyzed the Hillstrom email marketing experiment, which randomly assigned 64,000 customers to receive a men's email, a women's email, or no email at all. I combined the two email groups and compared their results with the no-email control group.
 
-I compared conversion and spend between the email and no-email groups, put confidence intervals around the differences, and estimate the campaign’s ROI under an assumed cost per email.
+I measured the differences in website visits, purchases and customer spend, using confidence intervals and statistical tests to assess the results. Finally, I checked whether the additional revenue could cover the cost of sending the emails.
 
+## Key findings
+| Outcome | Treatment lift | Relative lift |
+|---|---:|---:|
+| Website visits | +6.09 percentage points | +57.35% |
+| Conversion | +0.50 percentage points | +86.53% |
+| Average spend | +$0.60 per customer | +91.42% |
+
+The email worked. Customers who received one were more likely to visit the website and make a purchase, and they spent an average of $0.60 more per customer than those who received no email. All three results were statistically significant.
+
+The additional revenue also made the campaign worthwhile financially. Assuming a 40% contribution margin, the campaign breaks even at an email cost of around $0.24 per customer. Emails [cost way less than that](https://mailmeteor.com/glossary/email-price).
 
 ## Dataset description
 
-The analysis uses the Hillstrom Email Marketing dataset, which contains  64,000 customers randomly assigned to one of three group groups:
+The analysis uses the Hillstrom Email Marketing dataset, which contains  64,000 customers randomly assigned to one of three groups:
 
 - Mens E-Mail
 - Womens E-Mail
@@ -61,9 +71,9 @@ The table below shows the p-values from the balance tests:
 | `recency` | 0.763083 | No significant difference |
 | `history` | 0.698036 | No significant difference |
 
-None of the seven tests found evidence of a difference between groups, and all effect sizes were very small. Seven tests at the 5% level would produce a false alarm about a third of the time by chance alone, so a single significant result would not have been worrying either.
+None of the seven tests found evidence of a difference between groups, and all effect sizes were very small.
 
-The SMDs in the plot below give a more direct check. Every covariate is below the conventional 0.1 threshold, so the groups look alike on the characteristics I can observe.
+The SMDs in the plot below give a more direct check. Every covariate is below the conventional 0.1 threshold, so the groups look alike across the observed pre-email characteristics.
 
 Love plot showing standardized mean differences between each email group and the control group for all pre-email variables. All values fall below the 0.1 threshold.
 
@@ -99,7 +109,7 @@ Visits are only useful if they lead to purchases, so I looked at conversion next
 | P-value | 4.27 × 10⁻¹⁰ (p < 0.001) |
 | 95% confidence interval | [0.35, 0.63] percentage points |
 
-That works out to about 5 additional purchases for every 1,000 customers emailed. The email group converted at nearly twice the control rate, though from a low baseline, which is why the absolute figure is the more useful one for business decisions. The z-test provides strong evidence of a real effect, and because the interval doesn’t include zero, a true effect of zero is not plausible.
+That works out to about 5 additional purchases for every 1,000 customers emailed. The email group converted at nearly twice the control rate, though from a low baseline, which is why the absolute figure is the more useful one for business decisions. The z-test provides strong statistical evidence of a difference, and because the interval doesn’t include zero, a true effect of zero is not plausible.
 ### Spend
 Finally, did the extra purchases translate into revenue?
 | Metric | Result |
