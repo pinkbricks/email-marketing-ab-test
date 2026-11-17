@@ -69,3 +69,47 @@ Love plot showing standardized mean differences between each email group and the
 
 ![alt text](assets/outputs/treatment_vs_control_love_plot.png)
 *Figure 1. Standardized mean differences between each email group and the control. Points left of the dashed line at 0.1 indicate good balance.*
+
+## Calculating lift
+Lift measures the effect of the email. For example, it tells you how much did conversion change for customers who received one compared with those who didn’t?
+
+Here I compare customers who received either email (Men’s or Women’s, combined) with the no-email control group.
+
+### Visit
+Customers who received an email were much more likely to visit the website.
+| Metric | Result |
+|---|---:|
+| Absolute visit lift | 6.09 percentage points |
+| Relative visit lift | 57.35% |
+| Z-statistic | 20.5101 |
+| P-value | 1.75 × 10⁻⁹³ (p < 0.001) |
+| 95% confidence interval | [5.54, 6.63] percentage points |
+
+In practical terms, that’s about 6 additional visits for every 100 customers emailed. A two-proportion z-test gives very strong evidence that this isn’t due to chance, and the confidence interval is well above zero.
+
+
+### Conversion rate
+Visits are only useful if they lead to purchases, so I looked at conversion next.
+
+| Metric | Result |
+|---|---:|
+| Absolute conversion lift | 0.50 percentage points |
+| Relative conversion lift | 86.53% |
+| Z-statistic | 6.2438 |
+| P-value | 4.27 × 10⁻¹⁰ (p < 0.001) |
+| 95% confidence interval | [0.35, 0.63] percentage points |
+
+That works out to about 5 additional purchases for every 1,000 customers emailed. The email group converted at nearly twice the control rate, though from a low baseline, which is why the absolute figure is the more useful one for business decisions. The z-test provides strong evidence of a real effect, and because the interval doesn’t include zero, a true effect of zero is not plausible.
+### Spend
+Finally, did the extra purchases translate into revenue?
+| Metric | Result |
+|---|---:|
+| Absolute spend lift | 0.60 |
+| Relative spend lift | 91.42% |
+| T-statistic | 5.3022 |
+| P-value | < 0.001 |
+| 95% confidence interval | [0.38, 0.82] |
+
+Customers who received an email spent an average of [$]0.60 more than those who didn’t, a 91.42% increase. This figure is per customer emailed, including the many who bought nothing, which makes it the right basis for the ROI calculation. A two-sample t-test shows the difference is statistically significant, and the interval, [$0.38, $0.82], excludes zero.
+
+Emailing customers increased visits, conversion and spend relative to sending nothing, and each effect is statistically significant. The effects are also consistent. More customers visited the site, more of them bought, and their average spend rose. These results show the email works.
