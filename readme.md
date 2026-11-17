@@ -113,3 +113,28 @@ Finally, did the extra purchases translate into revenue?
 Customers who received an email spent an average of [$]0.60 more than those who didn’t, a 91.42% increase. This figure is per customer emailed, including the many who bought nothing, which makes it the right basis for the ROI calculation. A two-sample t-test shows the difference is statistically significant, and the interval, [$0.38, $0.82], excludes zero.
 
 Emailing customers increased visits, conversion and spend relative to sending nothing, and each effect is statistically significant. The effects are also consistent. More customers visited the site, more of them bought, and their average spend rose. These results show the email works.
+
+
+## Is the email worth sending?
+A campaign that increases conversions, spend and visits can still lose money if it costs more to run than it earns. This section asks how much the retailer could afford to spend per emailed customer and still make a profit.
+
+Each customer emailed generates some additional revenue, but only a portion of that revenue contributes to profit. Sending the email also has a cost. Therefore, estimated profit per customer emailed is:
+Profit per customer = (extra spend × margin) − cost per email.
+
+The dataset contains no information about campaign costs or margins. Since the experiment dates back to 2008, I also can't establish what sending these emails actually cost at the time. Rather than assume a single cost, I calculate estimated profit across an illustrative range of $0.001 to $1.00 per email.
+
+Input	Value	Source
+Extra spend per customer emailed	$0.60 (95% CI: $0.38 to $0.82)	Measured in the experiment
+Profit margin	[40%]	Assumption
+Cost per email	$0.001 to $1.00	Illustrative range
+
+At a 40% contribution margin, the estimated break-even email cost is $0.24 per customer. The confidence interval gives a break-even range of approximately $0.15 to $0.33.
+
+The plot shows estimated profit declining as the cost of sending each email increases. At very low costs, estimated profit is approximately $0.24 per customer. The shaded confidence band shows how this estimate changes when we account for uncertainty in the measured spend lift.
+
+![alt text](assets/outputs/profit_sensitivity.png)
+*Figure 2. Estimated profit per customer emailed across an illustrative range of email costs, assuming a 40% contribution margin.*
+
+This analysis excludes other potential costs, including creative work, marketing tools, discounts and other campaign expenses.
+### Conclusion
+The email campaign is very likely profitable. It earns more than it costs unless each send costs more than roughly 15 to 33 cents, far above [what an email typically costs](https://mailmeteor.com/glossary/email-price). That confirms the campaign works on average. It doesn’t tell us whether some customers respond much more than others, or whether a few are better left alone.
